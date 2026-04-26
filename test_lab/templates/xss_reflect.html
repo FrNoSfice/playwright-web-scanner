@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>反射型XSS测试</title></head>
+<body>
+  <h2>搜索结果页</h2>
+  <form method="get" action="/xss/reflect">
+    <input type="text" name="q" value="{{ q }}">
+    <button type="submit">搜索</button>
+  </form>
+
+  <p>你搜索的内容是：{{ q|safe }}</p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>DOM XSS测试</title></head>
+<body>
+  <h2>前端预览页</h2>
+  <div id="preview"></div>
+
+  <script>
+    const hash = decodeURIComponent(location.hash.slice(1));
+    document.getElementById("preview").innerHTML = hash;
+  </script>
+</body>
+</html>
